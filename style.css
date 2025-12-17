@@ -952,101 +952,121 @@ body {
   transform: scale(1.02);
   opacity: 1;
     }
-.gallery-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 40px;
-            text-align: center;
         }
 
-        .gallery-content {
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
+        .selos-section {
+  background: #ffffff;
+  padding: 70px 20px;
+}
 
-        .gallery-title {
-            font-size: 2.75rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
+.selos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
 
-        .gallery-description {
-            font-size: 1.125rem;
-            color: #6b7280;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
+/* Avatar clean */
+.selo-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .gallery-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background-color: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.01em;
-        }
+/* Ícones */
+.selo-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+}
 
-        .gallery-button:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-        }
+/* Ajuste fino para telas pequenas */
+@media (max-width: 600px) {
+  .selos-section {
+    padding: 50px 15px;
+  }
 
-        .gallery-button:active {
-            transform: translateY(0);
-        }
+  .selo-item img {
+    width: 90px;
+    height: 90px;
+  }
+}
+.galeria-section {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Imagem de fundo */
+.galeria-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
 
-        /* Versão alternativa com fundo cinza claro */
-        .gallery-section.alt-background {
-            background-color: #f9fafb;
-        }
+/* Gradiente branco para disfarçar com o site */
+.galeria-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgba(255,255,255,0.9) 12%,
+    rgba(255,255,255,0.2) 40%,
+    rgba(255,255,255,0.2) 60%,
+    rgba(255,255,255,0.9) 88%,
+    #ffffff 100%
+  );
+  z-index: 2;
+}
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .gallery-section {
-                padding: 60px 24px;
-            }
+/* Conteúdo */
+.galeria-overlay {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+}
 
-            .gallery-title {
-                font-size: 2rem;
-            }
+.galeria-overlay h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 12px;
+}
 
-            .gallery-description {
-                font-size: 1rem;
-            }
+.galeria-overlay p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 28px;
+}
 
-            .gallery-button {
-                padding: 14px 32px;
-                font-size: 0.9375rem;
-            }
-        }
+/* Botão */
+.btn-galeria {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 40px;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-        @media (max-width: 480px) {
-            .gallery-title {
-                font-size: 1.75rem;
-            }
-
-            .gallery-button {
-                width: 100%;
-                padding: 16px 24px;
-            }
-    }
+.btn-galeria:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
