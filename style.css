@@ -952,3 +952,101 @@ body {
   transform: scale(1.02);
   opacity: 1;
     }
+.gallery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .gallery-content {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .gallery-title {
+            font-size: 2.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .gallery-description {
+            font-size: 1.125rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .gallery-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.01em;
+        }
+
+        .gallery-button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        .gallery-button:active {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Versão alternativa com fundo cinza claro */
+        .gallery-section.alt-background {
+            background-color: #f9fafb;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 60px 24px;
+            }
+
+            .gallery-title {
+                font-size: 2rem;
+            }
+
+            .gallery-description {
+                font-size: 1rem;
+            }
+
+            .gallery-button {
+                padding: 14px 32px;
+                font-size: 0.9375rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-title {
+                font-size: 1.75rem;
+            }
+
+            .gallery-button {
+                width: 100%;
+                padding: 16px 24px;
+            }
+    }
