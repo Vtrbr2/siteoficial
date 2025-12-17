@@ -1,3 +1,4 @@
+
 /* ===== RESET BÁSICO ===== */
 * {
     margin: 0;
@@ -7,10 +8,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fff;
-    color: #fff;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #e0f2fe 100%);
+    color: #2d2d2d;
     overflow-x: hidden;
 }
+
 /* ===== NAVBAR ===== */
 .navbar {
     display: flex;
@@ -165,4 +167,979 @@ body {
         background: transparent;
         font-weight: 500;
       }
+    }
+
+
+/* ===== hero ===== */
+
+/* HERO ------------------------------------------------------------------ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* agora a imagem aparece 100% */
+    z-index: -2;
+}
+
+/* GRADIENTE COMO NA IMAGEM */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #fff);
+    z-index: -1;
+}
+
+/* CONTEÚDO --------------------------------------------------------------- */
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    animation: fadeUp 1s ease forwards;
+}
+
+/* BADGE SEM COBRIR A IMAGEM --------------------------------------------- */
+.badge {
+    background: rgba(65, 53, 133, 0.18); /* bem mais leve, não cobre a imagem */
+    padding: 10px 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 999px;
+    backdrop-filter: none; /* remove qualquer blur */
+    margin-bottom: 25px;
+    animation: pop 1.2s ease;
+}
+
+.badge .icon {
+    width: 20px;
+    filter: brightness(1.5);
+}
+
+.badge span {
+    color: #b9a9ff;
+    font-size: 16px;
+}
+
+/* TÍTULO IGUAL AO MODELO ------------------------------------------------ */
+.title {
+    color: #000;
+    font-size: 38px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #846dff;
+}
+
+/* SUBTÍTULO ------------------------------------------------------------- */
+.subtitle {
+    color: #9370DB;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+/* BOTÕES ---------------------------------------------------------------- */
+.btn {
+    display: block;
+    width: 90%;
+    max-width: 430px;
+    margin: 15px auto;
+    padding: 18px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+/* Botão roxo igual ao da imagem */
+.primary {
+    background: linear-gradient(90deg, #8f73ff, #715cff);
+    color: #fff;
+}
+
+.primary:hover {
+    transform: scale(1.03);
+}
+
+/* Botão secundário */
+.secondary {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #8f7eff;
+}
+
+.secondary:hover {
+    transform: scale(1.03);
+}
+
+/* ANIMAÇÕES -------------------------------------------------------------- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+    }
+    
+/*servicos*/
+
+
+.nossos-servicos {
+  background: #fff;
+  padding: 80px 20px;
+}
+
+.servicos-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.servico {
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+
+.servico h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.servico p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Efeitos */
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+.reveal-right {
+  transform: translateX(80px);
+}
+
+.reveal-top {
+  transform: translateY(40px);
+}
+
+/* Quando aparece */
+.reveal.active {
+  opacity: 1;
+  transform: translate(0);
+}
+/*logo seçoes*/
+.logo-overlay {
+  position: absolute;
+  top: 100%; /* posiciona na base do hero */
+  left: 50%;
+  transform: translate(-50%, -50%); /* centraliza e sobe metade */
+  z-index: 10;
+  text-align: center;
+  width: 140px; /* largura total do círculo */
+  height: 140px; /* igual à largura para ser redondo */
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #eee;
+}
+
+/* garante que o hero tenha posição relativa pra servir de base */
+.hero {
+  position: relative;
+}
+
+/* imagem dentro do círculo */
+.logo-overlay img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+/* --- Seção Sobre Nós --- */
+.sobre-nos {
+  background: #fff; 
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+}
+
+/* Imagem */
+.sobre-imagem {
+  flex: 1;
+  text-align: center;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.sobre-imagem img:hover {
+  transform: scale(1.03);
+}
+
+/* Texto */
+.sobre-texto {
+  flex: 1;
+  color: #2c3e50;
+  animation: fadeInUp 1s ease both;
+}
+
+.sobre-texto h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #4a00e0;
+}
+
+.sobre-texto p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Botão */
+.btn-sobre {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-sobre:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    order: 2;
+  }
+
+  .sobre-imagem {
+    order: 1;
+  }
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    }
+/* --- Seção Portfólio --- */
+.portfolio {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #f9f9ff, #eef2ff);
+}
+
+.portfolio h2 {
+  font-size: 2.4em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.portfolio .subtitulo {
+  color: #6c63ff;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* --- Carrossel --- */
+.carousel {
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+  width: 100%;
+  max-width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 10px;
+  transition: transform 0.4s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- Botão Ver Mais --- */
+.btn-vermais {
+  display: inline-block;
+  background: linear-gradient(90deg, #6c63ff, #0099ff);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-vermais:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+    }
+
+
+/* Process Timeline */
+  .vitor {
+  background: linear-gradient(135deg, #f8f9fc, #eef2ff);
+}
+
+.process-timeline {
+            margin-bottom: 100px;
+        }
+
+        .section-subtitle {
+            font-size: 48px;
+            font-weight: 100;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+
+        .timeline-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #000;
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+           background: #fff;
+            border: 2px solid #000;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: #000;
+            transform: rotate(45deg);
+        }
+
+        .timeline-content h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            
+        }
+.btn-link-bonito {
+  display: inline-block;
+  background: linear-gradient(135deg, #6a5af9, #8f7bff);
+  color: #fff;
+  padding: 5px 5px;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 20px;
+}
+
+.btn-link-bonito:hover {
+  background: linear-gradient(135deg, #7c6dff, #a28cff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+}
+
+.btn-link-bonito:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+/* Footer */
+       /* Footer Styles */
+        footer {
+            background: #292929;
+            color: #ffffff;
+            width: 100%;
+            padding: 60px 0 0 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Footer Top Section - Columns */
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #7c3aed;
+        }
+
+        .footer-column h3 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: #7c3aed;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #f3f4f6;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-column ul li a:hover {
+            color: #7c3aed;
+            transform: translateX(5px);
+        }
+
+        .footer-about p {
+            color: #f3f4f6;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo i {
+            color: #7c3aed;
+            font-size: 28px;
+        }
+
+        /* Footer Middle Section - Social Media */
+        .footer-middle {
+            padding: 40px 0;
+            border-bottom: 2px solid #ffeaf1;
+        }
+
+        .social-section {
+            text-align: center;
+        }
+
+        .social-section h3 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        /*    width: 50px;
+            height: 50px;
+            background: #2563eb;*/
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon:hover {
+            background: #7c3aed;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Footer Bottom Section - Copyright & Policies */
+        .footer-bottom {
+            padding: 30px 0;
+            background: #292929;
+        }
+
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #f3f4f6;
+            font-size: 14px;
+        }
+
+        .footer-policies {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-policies a {
+            color: #f3f4f6;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-policies a:hover {
+            color: #7c3aed;
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 767px) {
+            .main-content {
+                padding: 20px;
+            }
+
+            .content-box {
+                padding: 30px 20px;
+            }
+
+            .content-box h1 {
+                font-size: 24px;
+            }
+
+            .content-box p {
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 40px 0 0 0;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-column h3 {
+                font-size: 16px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-policies {
+                justify-content: center;
+            }
+
+            .social-icons {
+                gap: 15px;
+            }
+
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 0 15px;
+            }
+
+            .footer-policies {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  bottom: 22px;
+  right: 22px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: whatsPulse 1.6s infinite ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Animação suave */
+@keyframes whatsPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Ícone */
+.whatsapp-float i {
+  margin-left: 2px;
+            }
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+    background: #fff; 
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* FAQ ITEM */
+.faq-item {
+  background: #f7f7f7;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: all .3s ease;
+}
+
+.faq-item.active {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* FAQ QUESTION */
+.faq-question {
+  width: 100%;
+  padding: 18px;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* FAQ ANSWER */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  color: #444;
+  line-height: 1.6;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px; /* espaço suficiente */
+  padding-bottom: 18px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .faq-title {
+    font-size: 1.8rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+  }
+    }
+.logo-wrapper {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 3px solid #ffffff;
+  position: relative;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.servico-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+.como-funciona {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff; 
+}
+
+.como-funciona h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.como-funciona .subtitulo {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* CARD */
+.step h3 {
+    font-size: 1.3rem;
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+.step p {
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* ÍCONE + CÍRCULO */
+.icone-area {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #b45cff; /* ROXO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícone */
+.icone-area img {
+    width: 55px;
+
+    /* ROXO (deixa ícone preto virar roxo) */
+    filter: invert(27%) sepia(71%) saturate(5600%) hue-rotate(253deg)
+            brightness(87%) contrast(95%);
+}
+
+/* Número */
+.numero {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.ssl-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.ssl-image {
+  width: 280px;          /* ajuste se quiser maior/menor */
+  max-width: 90%;
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* efeito sutil profissional */
+.ssl-image:hover {
+  transform: scale(1.02);
+  opacity: 1;
     }
