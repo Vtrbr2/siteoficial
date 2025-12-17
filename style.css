@@ -302,95 +302,9 @@ body {
     100% { opacity: 1; transform: scale(1); }
     }
     
-/*servicos*/
 
 
-.nossos-servicos {
-  background: #fff;
-  padding: 80px 20px;
-}
 
-.servicos-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.titulo {
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 60px;
-  color: #000;
-}
-
-.servico {
-  margin-bottom: 50px;
-  opacity: 0;
-  transform: translateX(0);
-  transition: all 0.8s ease;
-}
-
-.servico h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #000;
-}
-
-.servico p {
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Efeitos */
-.reveal-left {
-  transform: translateX(-80px);
-}
-
-.reveal-right {
-  transform: translateX(80px);
-}
-
-.reveal-top {
-  transform: translateY(40px);
-}
-
-/* Quando aparece */
-.reveal.active {
-  opacity: 1;
-  transform: translate(0);
-}
-/*logo seçoes*/
-.logo-overlay {
-  position: absolute;
-  top: 100%; /* posiciona na base do hero */
-  left: 50%;
-  transform: translate(-50%, -50%); /* centraliza e sobe metade */
-  z-index: 10;
-  text-align: center;
-  width: 140px; /* largura total do círculo */
-  height: 140px; /* igual à largura para ser redondo */
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #eee;
-}
-
-/* garante que o hero tenha posição relativa pra servir de base */
-.hero {
-  position: relative;
-}
-
-/* imagem dentro do círculo */
-.logo-overlay img {
-  width: 80%;
-  height: auto;
-  object-fit: contain;
-}
 /* --- Seção Sobre Nós --- */
 .sobre-nos {
   background: #fff; 
@@ -492,76 +406,7 @@ body {
     transform: translateY(0);
   }
     }
-/* --- Seção Portfólio --- */
-.portfolio {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #f9f9ff, #eef2ff);
-}
 
-.portfolio h2 {
-  font-size: 2.4em;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.portfolio .subtitulo {
-  color: #6c63ff;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-/* --- Carrossel --- */
-.carousel {
-  overflow: hidden;
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  position: relative;
-}
-
-.carousel-track {
-  display: flex;
-  animation: scroll 20s linear infinite;
-}
-
-.carousel-track img {
-  width: 100%;
-  max-width: 250px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 0 10px;
-  transition: transform 0.4s ease;
-}
-
-.carousel-track img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* --- Botão Ver Mais --- */
-.btn-vermais {
-  display: inline-block;
-  background: linear-gradient(90deg, #6c63ff, #0099ff);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-vermais:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
-    }
 
 
 /* Process Timeline */
@@ -660,7 +505,7 @@ body {
 /* Footer */
        /* Footer Styles */
         footer {
-            background: #292929;
+            background: #000;
             color: #ffffff;
             width: 100%;
             padding: 60px 0 0 0;
@@ -898,43 +743,7 @@ body {
             }
         }
 
-/* BOTÃO FLUTUANTE WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  width: 65px;
-  height: 65px;
-  bottom: 22px;
-  right: 22px;
-  background: #25d366;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  z-index: 999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: whatsPulse 1.6s infinite ease-in-out;
-}
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-}
-
-/* Animação suave */
-@keyframes whatsPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-/* Ícone */
-.whatsapp-float i {
-  margin-left: 2px;
-            }
 /* ===== FAQ SECTION ===== */
 .faq-section {
   padding: 60px 20px;
